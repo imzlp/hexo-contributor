@@ -31,7 +31,7 @@ hexo.extend.tag.register('authortables', function (args, content) {
         if(author_arg === "")
             return;
         const argsObj = {}
-        let author_args = author_arg.split(' ');
+        let author_args = author_arg.split(',');
         // console.log(author_args)
         author_args.forEach((arg)=>{
             let currentTag = arg.split(':');

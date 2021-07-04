@@ -18,7 +18,8 @@ hexo_contributor:
 
 ```config
 {% authortables %}
-name:lipengzha github:hxhb email:hi@imzlp.com avatar:https://img.imzlp.com/imgs/zlp/picgo/2021/default-author-image.png zhihu:https://www.zhihu.com/follow wechat:https://imzlp.com/images/wechat-qrcode-offical.webp
-name:imzlp github:imzlp site:https://imzlp.com email:hi@imzlp.com zhihu:https://www.zhihu.com/follow wechat:https://imzlp.com/images/wechat-qrcode-offical.webp
+name:lipengzha,github:hxhb,site:https://imzlp.com/,email:hi@imzlp.com,avatar:https://img.imzlp.com/imgs/zlp/picgo/2021/avatar.png,zhihu:https://www.zhihu.com/people/imzlp,wechat:https://imzlp.com/images/wechat-qrcode-offical.webp
+name:Epic Games,github:EpicGames,site:https://unrealengine.com/,avatar:https://img.imzlp.com/imgs/zlp/picgo/2021/uelogo.png
+name:Tencent,github:Tencent,site:https://opensource.tencent.com/
 {% endauthortables %}
 ```
