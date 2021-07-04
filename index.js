@@ -1,5 +1,5 @@
 hexo.extend.tag.register('authortables', function (args, content) {
-    let default_image = ""
+    let default_avatar = ""
     let image_size = "80px"
     let font_icon_color = "555"
     let font_color = "009bf5"
@@ -7,8 +7,8 @@ hexo.extend.tag.register('authortables', function (args, content) {
     let github_avatar = true
     if(!(hexo.config.hexo_contributor === undefined))
     {
-        if(!(hexo.config.hexo_contributor.default_image === null))
-          default_image = hexo.config.hexo_contributor.default_image;
+        if(!(hexo.config.hexo_contributor.default_avatar === null))
+          default_avatar = hexo.config.hexo_contributor.default_avatar;
         if(!(hexo.config.hexo_contributor.image_size === null))
             image_size = hexo.config.hexo_contributor.image_size;
         if(!(hexo.config.hexo_contributor.font_icon_color === null))
@@ -42,16 +42,16 @@ hexo.extend.tag.register('authortables', function (args, content) {
         var authorName = argsObj.name === undefined ? "" : argsObj.name;
         var githubName = argsObj.github === undefined ? "" : argsObj.github;
         var authorLink = argsObj.site === undefined ? "" : argsObj.site;
-        var authorImage = ""
-        if(argsObj.image == null || argsObj.image === "")
+        var authorAvatar = ""
+        if(argsObj.avatar == null || argsObj.avatar === "")
         {
             if(!(githubName === "") && github_avatar)
             {
-                authorImage = "https://avatars.githubusercontent.com/"+githubName
+                authorAvatar = "https://avatars.githubusercontent.com/"+githubName
             }
             else
             {
-                var authorImage = default_image;
+                var authorAvatar = default_avatar;
             }
         }
         
@@ -60,7 +60,7 @@ hexo.extend.tag.register('authortables', function (args, content) {
         var authorWechat = argsObj.wechat === undefined ? "" : argsObj.wechat;
 
         iframes += `<td align="center" style="text-align:center;border: 2px solid #c1cfdc;color: #${font_color};font-weight: ${font_weight};">`;
-        iframes += `<a href="${authorLink}"><img src="${authorImage}" width="${image_size};" alt="" style="display: block;margin: 0 auto;padding: 2px;max-width: 96px;height: auto;border: 2px solid #333;border-radius: ${image_size};"/>`;
+        iframes += `<a href="${authorLink}"><img src="${authorAvatar}" width="${image_size};" alt="" style="display: block;margin: 0 auto;padding: 2px;max-width: 96px;height: auto;border: 2px solid #333;border-radius: ${image_size};"/>`;
         iframes += `<sub text-align="center" style="font-size: 15px;">${authorName}</sub></a><br/>`;
         if(!(githubName === ""))
             iframes += `<a href="https://github.com/${githubName}" title="Github"><i class="fab fa-github fa-fw" style="color:#${font_icon_color}"></i>`;
