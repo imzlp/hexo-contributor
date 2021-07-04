@@ -5,6 +5,8 @@ hexo.extend.tag.register('authortables', function (args, content) {
     let font_color = "009bf5"
     let font_weight = 500
     let github_avatar = true
+    let board_width = "260px"
+    let margin_rule = "auto"
     if(!(hexo.config.hexo_contributor === undefined))
     {
         if(!(hexo.config.hexo_contributor.default_avatar === null))
@@ -19,9 +21,15 @@ hexo.extend.tag.register('authortables', function (args, content) {
             font_weight = hexo.config.hexo_contributor.font_weight;
         if(!(hexo.config.hexo_contributor.github_avatar === null))
             github_avatar = hexo.config.hexo_contributor.github_avatar;
+        if(!(hexo.config.hexo_contributor.board_width === null))
+            board_width = hexo.config.hexo_contributor.board_width;
+        if(!(hexo.config.hexo_contributor.margin_rule === null))
+            margin_rule = hexo.config.hexo_contributor.margin_rule;
     }
-    let iframes="<table>\n<tr>\n";
+    let iframes=`<table style="width:auto;margin:${margin_rule};margin-bottom:5px;margin-top:5px;">\n<tr>\n`;
     content.split("\n").map((author_arg,i)=>{
+        if(author_arg === "")
+            return;
         const argsObj = {}
         let author_args = author_arg.split(' ');
         // console.log(author_args)
@@ -63,7 +71,7 @@ hexo.extend.tag.register('authortables', function (args, content) {
         var authorZhihu = argsObj.zhihu === undefined ? "" : argsObj.zhihu;
         var authorWechat = argsObj.wechat === undefined ? "" : argsObj.wechat;
 
-        iframes += `<td align="center" style="text-align:center;border: 2px solid #c1cfdc;color: #${font_color};font-weight: ${font_weight};">`;
+        iframes += `<td align="center" style="text-align:center;border: 1px solid #c1cfdc;color: #${font_color};font-weight: ${font_weight};width: ${board_width}; padding: 10px 0px;">`;
         iframes += `<a href="${authorLink}"><img src="${authorAvatar}" width="${image_size};" alt="" style="display: block;margin: 0 auto;padding: 2px;max-width: 96px;height: auto;border: 2px solid #333;border-radius: ${image_size};"/>`;
         iframes += `<sub text-align="center" style="font-size: 15px;">${authorName}</sub></a><br/>`;
         if(!(githubName === ""))
@@ -77,6 +85,6 @@ hexo.extend.tag.register('authortables', function (args, content) {
         iframes += `</a></td>\n`;
 
     });
-    iframes +="</table>\n</tr>\n";
+    iframes +=`</table>\n</tr>\n`;
     return iframes;
 }, { ends: true });

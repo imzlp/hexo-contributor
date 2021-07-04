@@ -4,6 +4,8 @@
 
 ```yml
 hexo_contributor:
+  margin_rule: unset
+  board_width: 120px
   image_size: 70px
   default_avatar: https://img.imzlp.com/imgs/zlp/picgo/2021/default-author-image.png
   font_icon_color: 555
