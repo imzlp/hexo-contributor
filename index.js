@@ -48,10 +48,10 @@ hexo.extend.tag.register('authortables', function (args, content) {
             // console.log(TagValue);
         });
         var authorName = argsObj.name === undefined ? "" : argsObj.name;
-        var githubName = argsObj.github === undefined ? "" : argsObj.github;
-        var authorLink = argsObj.site === undefined ? "" : argsObj.site;
+        var githubName = argsObj.github_id === undefined ? "" : argsObj.github_id;
+        var authorLink = argsObj.site_addr === undefined ? "" : argsObj.site_addr;
         var authorAvatar = ""
-        if(argsObj.avatar == null || argsObj.avatar === "")
+        if(argsObj.avatar_image == null || argsObj.avatar_image === "")
         {
             if(!(githubName === "") && github_avatar)
             {
@@ -64,12 +64,12 @@ hexo.extend.tag.register('authortables', function (args, content) {
         }
         else
         {
-            authorAvatar = argsObj.avatar;
+            authorAvatar = argsObj.avatar_image;
         }
         
         var authorEmail = argsObj.email === undefined ? "" : argsObj.email;
-        var authorZhihu = argsObj.zhihu === undefined ? "" : argsObj.zhihu;
-        var authorWechat = argsObj.wechat === undefined ? "" : argsObj.wechat;
+        var authorZhihu = argsObj.zhihu_addr === undefined ? "" : argsObj.zhihu_addr;
+        var authorWechat = argsObj.wechat_image === undefined ? "" : argsObj.wechat_image;
         var authorStackoverflow = argsObj.stackoverflow === undefined ? "" : argsObj.stackoverflow;
         
         iframes += `<td align="center" style="text-align:center;border: 1px solid #c1cfdc;color: #${font_color};font-weight: ${font_weight};width: ${board_width}; padding: 10px 0px;">`;

@@ -18,8 +18,8 @@ hexo_contributor:
 
 ```config
 {% authortables %}
-name:lipengzha,github:hxhb,site:https://imzlp.com/,email:hi@imzlp.com,avatar:https://img.imzlp.com/imgs/zlp/picgo/2021/avatar.png,zhihu:https://www.zhihu.com/people/imzlp,wechat:https://imzlp.com/images/wechat-qrcode-offical.webp
-name:Epic Games,github:EpicGames,site:https://unrealengine.com/,avatar:https://img.imzlp.com/imgs/zlp/picgo/2021/uelogo.png
-name:Tencent,github:Tencent,site:https://opensource.tencent.com/
+name:lipengzha,github_id:hxhb,site_addr:https://imzlp.com/,email:hi@imzlp.com,avatar_image:https://img.imzlp.com/imgs/zlp/picgo/2021/avatar.png,zhihu_addr:https://www.zhihu.com/people/imzlp,wechat:https://imzlp.com/images/wechat-qrcode-offical.webp
+name:Epic Games,github_id:EpicGames,site_addr:https://unrealengine.com/,avatar_image:https://img.imzlp.com/imgs/zlp/picgo/2021/uelogo.png
+name:Tencent,github_id:Tencent,site_addr:https://opensource.tencent.com/
 {% endauthortables %}
 ```
