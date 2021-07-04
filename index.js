@@ -54,6 +54,10 @@ hexo.extend.tag.register('authortables', function (args, content) {
                 var authorAvatar = default_avatar;
             }
         }
+        else
+        {
+            authorAvatar = argsObj.avatar;
+        }
         
         var authorEmail = argsObj.email === undefined ? "" : argsObj.email;
         var authorZhihu = argsObj.zhihu === undefined ? "" : argsObj.zhihu;
