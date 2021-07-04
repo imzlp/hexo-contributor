@@ -70,7 +70,8 @@ hexo.extend.tag.register('authortables', function (args, content) {
         var authorEmail = argsObj.email === undefined ? "" : argsObj.email;
         var authorZhihu = argsObj.zhihu === undefined ? "" : argsObj.zhihu;
         var authorWechat = argsObj.wechat === undefined ? "" : argsObj.wechat;
-
+        var authorStackoverflow = argsObj.stackoverflow === undefined ? "" : argsObj.stackoverflow;
+        
         iframes += `<td align="center" style="text-align:center;border: 1px solid #c1cfdc;color: #${font_color};font-weight: ${font_weight};width: ${board_width}; padding: 10px 0px;">`;
         iframes += `<a href="${authorLink}"><img src="${authorAvatar}" width="${image_size};" alt="" style="display: block;margin: 0 auto;padding: 2px;max-width: 96px;height: auto;border: 2px solid #333;border-radius: ${image_size};"/>`;
         iframes += `<sub text-align="center" style="font-size: 15px;">${authorName}</sub></a><br/>`;
@@ -80,6 +81,8 @@ hexo.extend.tag.register('authortables', function (args, content) {
             iframes += `<a href="${authorZhihu}" title="知乎"><i class="fa fa-custom zhihu fa-fw" style="color:#${font_icon_color}"></i>`;
         if(!(authorZhihu === ""))
             iframes += `<a href="${authorWechat}" title="微信"><i class="fab fa-weixin fa-fw" style="color:#${font_icon_color}"></i>`;
+        if(!(authorStackoverflow === ""))
+            iframes += `<a href="${authorStackoverflow}" title="stack overflow"><i class="fab fa-stack-overflow" style="color:#${font_icon_color}"></i>`;
         if(!(authorEmail === ""))
             iframes += `<a href="mailto:${authorEmail}" title="Email"><i class="fa fa-envelope fa-fw" style="color:#${font_icon_color}"></i>`;
         iframes += `</a></td>\n`;
