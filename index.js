@@ -72,7 +72,7 @@ hexo.extend.tag.register('authortables', function (args, content) {
         var authorWechat = argsObj.wechat_image === undefined ? "" : argsObj.wechat_image;
         var authorStackoverflow = argsObj.stackoverflow === undefined ? "" : argsObj.stackoverflow;
         
-        iframes += `<td align="center" style="text-align:center;border: 1px solid #c1cfdc;color: #${font_color};font-weight: ${font_weight};width: ${board_width}; padding: 10px 0px;">`;
+        iframes += `<td align="center" style="text-align:center;border: 1px solid #c1cfdc;color: #${font_color};font-weight: ${font_weight};width: ${board_width}; padding: 10px 10px;">`;
         iframes += `<a href="${authorLink}"><img src="${authorAvatar}" width="${image_size};" alt="" style="display: block;margin: 0 auto;padding: 2px;max-width: 96px;height: auto;border: 2px solid #333;border-radius: ${image_size};"/>`;
         iframes += `<sub text-align="center" style="font-size: 15px;">${authorName}</sub></a><br/>`;
         if(!(githubName === ""))
