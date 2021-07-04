@@ -1,0 +1,56 @@
+{
+  "_args": [
+    [
+      "hexo-contributor@1.0.0",
+      "C:\\Users\\visionsmile\\Desktop\\ue5wiki_source"
+    ]
+  ],
+  "_from": "hexo-contributor@1.0.0",
+  "_id": "hexo-contributor@1.0.0",
+  "_inBundle": false,
+  "_integrity": "sha512-xbfxgnnt200aKUOVTJcHjEyueIQ3PPrvUj/BrgzS3IV6Ab+n+Bpj//iH+iZ86M0oqncR0pB/fWo8JqEi06jhdg==",
+  "_location": "/hexo-contributor",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "version",
+    "registry": true,
+    "raw": "hexo-contributor@1.0.0",
+    "name": "hexo-contributor",
+    "escapedName": "hexo-contributor",
+    "rawSpec": "1.0.0",
+    "saveSpec": null,
+    "fetchSpec": "1.0.0"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/hexo-contributor/-/hexo-contributor-1.0.0.tgz",
+  "_spec": "1.0.0",
+  "_where": "C:\\Users\\visionsmile\\Desktop\\ue5wiki_source",
+  "author": {
+    "name": "imzlp"
+  },
+  "bugs": {
+    "url": "https://github.com/imzlp/hexo-contributor/issues"
+  },
+  "description": "Embed steam game in Hexo posts/pages.",
+  "homepage": "https://github.com/imzlp/hexo-contributor#readme",
+  "keywords": [
+    "Hexo",
+    "steam",
+    "embed",
+    "tag",
+    "hexo-plugin"
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "name": "hexo-contributor",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/imzlp/hexo-contributor.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "1.0.0"
+}
