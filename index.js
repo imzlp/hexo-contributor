@@ -27,6 +27,7 @@ hexo.extend.tag.register('authortables', function (args, content) {
             margin_rule = hexo.config.hexo_contributor.margin_rule;
     }
     let iframes=`<table style="width:auto;margin:${margin_rule};margin-bottom:5px;margin-top:5px;">\n<tr>\n`;
+
     content.split("\n").map((author_arg,i)=>{
         if(author_arg === "")
             return;
@@ -71,20 +72,25 @@ hexo.extend.tag.register('authortables', function (args, content) {
         var authorZhihu = argsObj.zhihu_addr === undefined ? "" : argsObj.zhihu_addr;
         var authorWechat = argsObj.wechat_image === undefined ? "" : argsObj.wechat_image;
         var authorStackoverflow = argsObj.stackoverflow === undefined ? "" : argsObj.stackoverflow;
-        
+        var authorArticleNum = argsObj.article_num === undefined ? 0 : argsObj.article_num;
         iframes += `<td align="center" style="text-align:center;border: 1px solid #c1cfdc;color: #${font_color};font-weight: ${font_weight};width: ${board_width}; padding: 10px 10px;">`;
-        iframes += `<a href="${authorLink}"><img src="${authorAvatar}" width="${image_size};" alt="" style="display: block;margin: 0 auto;padding: 2px;max-width: 96px;height: auto;border: 2px solid #333;border-radius: ${image_size};"/>`;
+        iframes += `<a href="${authorLink}"><img src="${authorAvatar}" width="${image_size};" alt="" style="display: block;margin: 0 auto;padding: 2px;max-width: 96px;height: auto;border: 2px solid #333;border-radius: ${image_size};"/></a>`;
         iframes += `<sub text-align="center" style="font-size: 15px;">${authorName}</sub></a><br/>`;
         if(!(githubName === ""))
-            iframes += `<a href="https://github.com/${githubName}" title="Github"><i class="fab fa-github fa-fw" style="color:#${font_icon_color}"></i>`;
+            iframes += `<a href="https://github.com/${githubName}" title="Github"><i class="fab fa-github fa-fw" style="color:#${font_icon_color}"></i></a>`;
         if(!(authorZhihu === ""))
-            iframes += `<a href="${authorZhihu}" title="知乎"><i class="fa fa-custom zhihu fa-fw" style="color:#${font_icon_color}"></i>`;
+            iframes += `<a href="${authorZhihu}" title="知乎"><i class="fa fa-custom zhihu fa-fw" style="color:#${font_icon_color}"></i></a>`;
         if(!(authorZhihu === ""))
-            iframes += `<a href="${authorWechat}" title="微信"><i class="fab fa-weixin fa-fw" style="color:#${font_icon_color}"></i>`;
+            iframes += `<a href="${authorWechat}" title="微信"><i class="fab fa-weixin fa-fw" style="color:#${font_icon_color}"></i></a>`;
         if(!(authorStackoverflow === ""))
-            iframes += `<a href="${authorStackoverflow}" title="stack overflow"><i class="fab fa-stack-overflow" style="color:#${font_icon_color}"></i>`;
+            iframes += `<a href="${authorStackoverflow}" title="stack overflow"><i class="fab fa-stack-overflow" style="color:#${font_icon_color}"></i></a>`;
         if(!(authorEmail === ""))
-            iframes += `<a href="mailto:${authorEmail}" title="Email"><i class="fa fa-envelope fa-fw" style="color:#${font_icon_color}"></i>`;
+            iframes += `<a href="mailto:${authorEmail}" title="Email"><i class="fa fa-envelope fa-fw" style="color:#${font_icon_color}"></i></a>`;
+        if(!(authorArticleNum == null || authorArticleNum === 0))
+        {
+            iframes += `<br/>`;
+            iframes += `<sub text-align="center" style="font-size: 14px;color: #555";buttom: 0;>发表 ${authorArticleNum} 篇内容</sub></a>`;
+        }
         iframes += `</a></td>\n`;
 
     });
@@ -218,4 +224,4 @@ hexo.extend.tag.register('allcontributor', function (args, content)
         iframes += `</table></tr>`;
    });
     return iframes;
-},{ async: true });
+}, { async: false });
