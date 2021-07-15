@@ -26,7 +26,8 @@ hexo.extend.tag.register('authortables', function (args, content) {
         if(!(hexo.config.hexo_contributor.margin_rule === null))
             margin_rule = hexo.config.hexo_contributor.margin_rule;
     }
-    let iframes=`<table style="width:auto;margin:${margin_rule};margin-bottom:5px;margin-top:5px;">\n<tr>\n`;
+    let iframes = `<div class="contributor-box" style="overflow-y:auto;">\n`
+    iframes += `<table style="width:auto;margin:${margin_rule};margin-bottom:5px;margin-top:5px;">\n<tr>\n`;
 
     content.split("\n").map((author_arg,i)=>{
         if(author_arg === "")
@@ -94,7 +95,7 @@ hexo.extend.tag.register('authortables', function (args, content) {
         iframes += `</a></td>\n`;
 
     });
-    iframes +=`</table>\n</tr>\n`;
+    iframes +=`</table>\n</tr>\n</div>\n`;
     return iframes;
 }, { ends: true });
 
