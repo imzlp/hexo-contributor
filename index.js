@@ -210,7 +210,7 @@ hexo.extend.tag.register('allcontributor', function (args, content)
                 iframes += `<a href="https://github.com/${githubName}" title="Github"><i class="fab fa-github fa-fw" style="color:#${font_icon_color}"></i></a>`;
             if(!(authorZhihu == null || authorZhihu === ""))
                 iframes += `<a href="${authorZhihu}" title="知乎"><i class="fa fa-custom zhihu fa-fw" style="color:#${font_icon_color}"></i></a>`;
-            if(!(authorZhihu == null || authorZhihu === ""))
+            if(!(authorWechat == null || authorWechat === ""))
                 iframes += `<a href="${authorWechat}" title="微信"><i class="fab fa-weixin fa-fw" style="color:#${font_icon_color}"></i></a>`;
             if(!(authorStackoverflow == null || authorStackoverflow === ""))
                 iframes += `<a href="${authorStackoverflow}" title="stack overflow"><i class="fab fa-stack-overflow" style="color:#${font_icon_color}"></i></a>`;
