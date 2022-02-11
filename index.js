@@ -170,8 +170,8 @@ hexo.extend.tag.register('allcontributor', function (args, content)
     authors.sort(function(a,b){return a.article_num < b.article_num;});
 
     var result = [];
-    for(var i=0,len=authors.length;i<len;i+=6){
-       result.push(authors.slice(i,Math.min(len,i+7)));
+    for(var i=0,len=authors.length;i<len;i+=8){
+       result.push(authors.slice(i,Math.min(len,i+8)));
     }
     console.log(result);
     result.forEach(function(authors, index) {
