@@ -171,7 +171,7 @@ hexo.extend.tag.register('allcontributor', function (args, content)
 
     var result = [];
     for(var i=0,len=authors.length;i<len;i+=6){
-       result.push(authors.slice(i,i+7));
+       result.push(authors.slice(i,Math.min(len,i+7)));
     }
     result.forEach(function(authors, index) {
         iframes += `<table style="width:auto;margin:${margin_rule};margin-bottom:5px;margin-top:5px;"><tr>`;
