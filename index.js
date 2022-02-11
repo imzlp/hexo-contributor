@@ -170,9 +170,8 @@ hexo.extend.tag.register('allcontributor', function (args, content)
     authors.sort(function(a,b){return a.article_num < b.article_num;});
 
     var result = [];
-    var default_length_for_line = 7;
-    for(var i=0, len=authors.length ; i < len ;i += (default_length_for_line-1){
-       result.push(authors.slice(i,i + default_length_for_line));
+    for(var i=0,len=authors.length;i<len;i+=6){
+       result.push(authors.slice(i,i+7));
     }
     result.forEach(function(authors, index) {
         iframes += `<table style="width:auto;margin:${margin_rule};margin-bottom:5px;margin-top:5px;"><tr>`;
