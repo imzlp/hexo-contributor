@@ -134,7 +134,7 @@ hexo.extend.tag.register('allcontributor', function (args, content)
     var posts = hexo.locals.get('posts');
     posts.each(function(post, index) {
             var authorName = post.author.name
-            console.log(post.title);
+            // console.log(post.title);
             if(authorName == undefined)
                 return;
             var found = false;
@@ -163,7 +163,7 @@ hexo.extend.tag.register('allcontributor', function (args, content)
                 newAuthor.zhihu_addr = post.author.zhihu_addr;
                 newAuthor.wechat_image = post.author.wechat_image;
                 authors.push(newAuthor);
-                console.log(authors);
+                // console.log(authors);
             }
     });
 
@@ -173,7 +173,7 @@ hexo.extend.tag.register('allcontributor', function (args, content)
     for(var i=0,len=authors.length;i<len;i+=8){
        result.push(authors.slice(i,Math.min(len,i+8)));
     }
-    console.log(result);
+    // console.log(result);
     result.forEach(function(authors, index) {
         iframes += `<table style="width:auto;margin:${margin_rule};margin-bottom:5px;margin-top:5px;"><tr>`;
         authors.forEach(function(post, index) 
